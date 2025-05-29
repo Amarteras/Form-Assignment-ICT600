@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borang Permohonan Dokumen Pelajar</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="header-container">
+        <a href="index.html">
+          <img src="images/logo.jpg" alt="UiTM Logo" class="logo" />
+        </a>
+        <div class="title-group">
+          <h1>Hal Ehwal Akademik</h1>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">My Profile</a>
+            <a href="form.html">Document Form</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <h2>BORANG PERMOHONAN DOKUMEN PELAJAR</h2>
+        <form id="docForm">
+          <fieldset>
+            <legend>Jenis-Jenis Surat Pengesahan Yang Diperlukan<br><small>(sila tandakan (/) yang mana berkenaan)</small></legend>
+            <label><input type="radio" name="docType" value="Sedang Belajar" /> Surat Pengesahan - Sedang Belajar</label><br />
+            <label><input type="radio" disabled /> Mini Transkrip (sila mohon di iStudent Portal)</label><br />
+            <label><input type="radio" name="docType" value="Tamat Pengajian" /> Surat Tamat Pengajian</label><br />
+            <label><input type="radio" name="docType" value="Lain-lain" /> Lain-lain: <input type="text" name="otherDoc" /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>MAKLUMAT PERIBADI PELAJAR</legend>
+            <label>Nama <input type="text" name="name" required /></label>
+            <label for="ic">No. Kad Pengenalan</label>
+            <input type="text" name="ic" id="ic" required inputmode="numeric" pattern="\d+" title="Hanya nombor dibenarkan." />
+            <div class="grid-2-equal">
+              <div class="form-row">              
+                <label>No. Pelajar
+                  <input type="text" name="studentId" required inputmode="numeric" pattern="\d+" title="Hanya nombor dibenarkan." />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>Kod Program
+                  <select name="programCode" required>
+                    <option value="">-- Sila Pilih --</option>
+                    <option value="CS110">CS110 - Diploma in Computer Science</option>
+                    <option value="CS230">CS230 - Bachelor of Computer Science</option>
+                    <option value="CS240">CS240 - Bachelor of Information Technology</option>
+                    <option value="IM110">IM110 - Diploma in Library Management</option>
+                    <option value="IM245">IM245 - Bachelor of Information Science</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="grid-2-equal">             
+              <label>Sesi Kemasukan <input type="text" name="entrySession" required /></label>
+              <label>Sesi Tamat <input type="text" name="endSession" required /></label>
+            </div>
+            <div class="grid-2-equal">
+              <div class="form-row">            
+                <label>No. Tel. Bimbit (H/P) 
+                  <input type="text" name="phone" required inputmode="numeric" pattern="\d+" title="Hanya nombor dibenarkan." />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>Emel <input type="email" name="email" required /></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <p>Saya mengaku butiran di atas adalah benar.</p>
+            <label>Tandatangan Pelajar: <input type="text" name="studentSignature" required /></label>
+            <label>Tarikh: <input type="date" name="studentDate" required /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>PENGESAHAN STAF BAHAGIAN HAL EHWAL AKADEMIK<br><small>(setelah permohonan pelajar selesai diproses)</small></legend>
+            <label>Tandatangan: <input type="text" name="staffSignature" disabled/></label><br />
+            <label>Nama Staf: <input type="text" name="staffName" disabled/></label><br />
+            <label>Tarikh: <input type="date" name="staffDate" disabled/></label>
+          </fieldset>
+
+          <button type="submit">Hantar</button>
+        </form>
+
+        <section id="result"></section>
+
+        <div class="notes">
+          <p><strong>Makluman kepada Pelajar:</strong></p>
+          <ol>
+            <li>Borang yang telah diisi dengan lengkap boleh dimajukan ke:<br>
+              (a) Pejabat Bahagian Hal Ehwal Akademik (HEA), UiTM, 02600 Arau, Perlis<br>
+              (b) Emel: <a href="mailto:heapls@uitm.edu.my">heapls@uitm.edu.my</a>
+            </li>
+            <li>Tempoh siap permohonan dokumen pelajar adalah dalam tiga (3) hari bekerja dari tarikh permohonan.</li>
+          </ol>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ICT600 Web App | UiTM Cawangan Perlis</p>
+    </footer>
+  </div>
+</body>
+</html>
